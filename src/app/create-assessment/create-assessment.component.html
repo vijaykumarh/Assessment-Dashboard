@@ -1,0 +1,64 @@
+<div class="create-assessment-container">
+    <h1>Create New Assessment</h1>
+    
+    <div class="form-group">
+      <label for="title">Assessment Title</label>
+      <input type="text" id="title" [(ngModel)]="assessment.title" class="form-control" placeholder="Enter assessment title">
+    </div>
+  
+    <div class="form-group">
+      <label for="type">Assessment Type</label>
+      <select id="type" [(ngModel)]="assessment.type" class="form-control">
+        <option value="quiz">Quiz</option>
+        <option value="assignment">Assignment</option>
+        <option value="survey">Survey</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="questionBank">Question Bank</label>
+      <button (click)="accessQuestionBank()" class="btn btn-secondary">Select from Question Bank</button>
+      <button (click)="createNewQuestion()" class="btn btn-primary">Create New Question</button>
+    </div>
+  
+    <div class="form-group">
+      <label for="questions">Questions</label>
+      <app-question-creation-tool [(questions)]="assessment.questions"></app-question-creation-tool>
+    </div>
+  
+    <div class="form-group">
+      <label>Grading Options</label>
+      <app-grading-options [(grading)]="assessment.grading"></app-grading-options>
+    </div>
+  
+    <div class="form-group">
+      <label for="instructions">Instructions</label>
+      <textarea id="instructions" [(ngModel)]="assessment.instructions" class="form-control" placeholder="Enter instructions for students"></textarea>
+    </div>
+  
+    <div class="form-group">
+      <label for="timeLimit">Time Limit</label>
+      <input type="number" id="timeLimit" [(ngModel)]="assessment.timeLimit" class="form-control" placeholder="Enter time limit in minutes">
+    </div>
+  
+    <div class="form-group">
+      <label for="attempts">Attempts Allowed</label>
+      <input type="number" id="attempts" [(ngModel)]="assessment.attempts" class="form-control" placeholder="Enter number of attempts allowed">
+    </div>
+  
+    <div class="form-group">
+      <label>Feedback Options</label>
+      <app-feedback-options [(feedback)]="assessment.feedback"></app-feedback-options>
+    </div>
+  
+    <div class="form-group">
+      <label for="courseContent">Link to Course Content</label>
+      <input type="text" id="courseContent" [(ngModel)]="assessment.courseContent" class="form-control" placeholder="Enter related course modules or topics">
+    </div>
+  
+    <button (click)="previewAssessment()" class="btn btn-warning">Preview</button>
+  
+    <button (click)="saveDraft()" class="btn btn-secondary">Save as Draft</button>
+    <button (click)="publishAssessment()" class="btn btn-success">Publish</button>
+  </div>
+  

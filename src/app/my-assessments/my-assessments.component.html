@@ -1,0 +1,11 @@
+<div class="my-assessments">
+    <h2>My Assessments</h2>
+    <ul>
+      <li *ngFor="let assessment of assessments">
+        {{ assessment.title }} - {{ assessment.type }}
+        <button (click)="editAssessment(assessment.id)" class="btn btn-link">Edit</button>
+        <button (click)="viewAnalytics(assessment.id)" class="btn btn-link">Analytics</button>
+      </li>
+    </ul>
+  </div>
+  
